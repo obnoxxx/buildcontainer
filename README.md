@@ -28,10 +28,10 @@ $ make  IMAGE_LANG=c IMAGE_OS=fedora REGISTRY_NAMESPACE=fillme image-build
 
 ```
 
-**Example for using image `quay.io/fillme/devcontainer-fedora-c:latest`:**
+**Example for using the image:**
 
 
-````console
+```console
 
 $ podman  run -it --workdir /work --mount type=bind,source=$(pwd),target=/work,relabel=private  --workdir /work quay.io/fillme/devcontainer/fedora-c:latest  bash  
 
