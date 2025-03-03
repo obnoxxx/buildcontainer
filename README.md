@@ -38,3 +38,6 @@ $ podman  run -it --workdir /work --mount type=bind,source=$(pwd),target=/work,r
 
 ```
 
+prepuilt fedira-c images are available on [quay.io](https://quay.io/repository/madam/devcontainer-fedora-c?tab=tags)
+
+
