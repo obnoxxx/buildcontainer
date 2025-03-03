@@ -1,0 +1,15 @@
+FROM registry.fedoraproject.org/fedora:41
+
+MAINTAINER Michael Adam <obnox@samba.org>
+
+LABEL org.opencontainers.image.title="C Development Container"
+LABEL org.opencontainers.image.description="Container for building C projects"
+LABEL org.opencontainers.image.vendor="obnoxx"
+LABEL org.opencontainers.image.url="https://github.com/obnoxxx/devcontainer"
+
+ARG INSTALL_SCRIPT=""
+
+COPY  "${INSTALL_SCRIPT}" /usr/local/bin/install-packages.sh
+RUN chmod +x /usr/local/bin/install-packages.sh
+RUN /usr/local/bin/install-packages.sh
+
