@@ -6,7 +6,7 @@ REGISTRY_NAMESPACE ?= fillme
 IMAGE_TAG ?= latest
 IMAGE_OS ?= fedora
 IMAGE_LANG ?= c
-IMAGE_NAME ?= devcontainer-$(IMAGE_OS)-$(IMAGE_LANG)
+IMAGE_NAME ?= devcontainer/$(IMAGE_OS)-$(IMAGE_LANG)
 
 IMG  ?= $(IMAGE_REGISTRY)/$(REGISTRY_NAMESPACE)/$(IMAGE_NAME):$(IMAGE_TAG)
 

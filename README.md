@@ -28,16 +28,15 @@ $ make  IMAGE_LANG=c IMAGE_OS=fedora REGISTRY_NAMESPACE=fillme image-build
 
 ```
 
-**Example for using image `quay.io/fillme/devcontainer-frdora-c:latest`:**
+**Example for using image `quay.io/fillme/devcontainer-fedora-c:latest`:**
 
 
 ````console
 
-$ podman  run -it --workdir /work --mount type=bind,source=$(pwd),target=/work,relabel=private  --workdir /work quay.io/madam/devcontainer-fedora-c:latest  makepodman  run -it --mount type=bind,source=$(pwd),target=/work,relabel=private  --workdir /work quay.io/fillme/devcontainer-fedora-c:latest bash
-
+$ podman  run -it --workdir /work --mount type=bind,source=$(pwd),target=/work,relabel=private  --workdir /work quay.io/fillme/devcontainer/fedora-c:latest  bash  
 
 ```
 
-prepuilt fedira-c images are available on [quay.io](https://quay.io/repository/madam/devcontainer-fedora-c?tab=tags)
+prepuilt fedora-c images are available on [quay.io](https://quay.io/repository/madam/devcontainer/fedora-c?tab=tags).
 
 
