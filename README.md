@@ -37,6 +37,6 @@ $ podman  run -it --workdir /work --mount type=bind,source=$(pwd),target=/work,r
 
 ```
 
-prepuilt fedora-c images are available on [quay.io](https://quay.io/repository/madam/devcontainer/fedora-c?tab=tags).
+prepuilt fedora-c images are available on [quay](https://quay.io/repository/madam/devcontainer/fedora-c).
 
 
