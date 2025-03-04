@@ -20,7 +20,14 @@ The purpose of this project is to provide container images that can be used to b
 * deb packaging
 
 
-Of these, only the C language images on fedora, debian, and ubuntu are   implemented yet.
+Of these combinations, only the C language images on fedora, debian, and ubuntu are   implemented so far.
+
+
+In order to build or use these container images,  one will need a system (typically Linux) with docker or podman.
+
+
+
+
 
 
 **Example how to build and publisha fedora based image for compiling C projects:**
