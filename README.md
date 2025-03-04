@@ -20,7 +20,7 @@ The purpose of this project is to provide container images that can be used to b
 * deb packaging
 
 
-Of these, only the C language fedora  image is  implemented yet.
+Of these, only the C language fedora and debian   images are   implemented yet.
 
 
 **Example how to build and publisha fedora based image for compiling C projects:**
