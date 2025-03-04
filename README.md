@@ -46,7 +46,7 @@ Note that `quay.io`is the default registry. The above exampl;e shows how to over
 **Example for using the image:**
 
 From the root of a software project that one wants to compile, arbitrary commands  can be run inside the build continer
-as follows, for example `configure`and `make`as well as instaalation of library dependencies.
+as follows, for example `configure`and `make`as well as installation of library dependencies.
 
 ```console
 
@@ -54,7 +54,9 @@ $ podman  run -it --workdir /work --mount type=bind,source=$(pwd),target=/work,r
 
 ```
 
-prepuilt fedora, debian, and ubuntu C  images are available on iquay:
+It works correspondingly with docker.
+
+prepuilt fedora, debian, and ubuntu C  images are available on quay:
 
 * [fedora-c](https://quay.io/repository/madam/devcontainer/fedora-c).
 * [idebian-c](https://quay.io/repository/madam/devcontainer/debian-c).
