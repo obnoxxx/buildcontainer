@@ -20,7 +20,7 @@ The purpose of this project is to provide container images that can be used to b
 * deb packaging
 
 
-Of these, only the C language fedora and debian   images are   implemented yet.
+Of these, only the C language images on fedora, debian, and ubuntu are   implemented yet.
 
 
 **Example how to build and publisha fedora based image for compiling C projects:**
@@ -47,6 +47,10 @@ $ podman  run -it --workdir /work --mount type=bind,source=$(pwd),target=/work,r
 
 ```
 
-prepuilt fedora-c images are available on [quay](https://quay.io/repository/madam/devcontainer/fedora-c).
+prepuilt fedora, debian, and ubuntu C  images are available on iquay:
+
+* [fedora-c](https://quay.io/repository/madam/devcontainer/fedora-c).
+* [idebian-c](https://quay.io/repository/madam/devcontainer/debian-c).
+* [ubuntu-c](https://quay.io/repository/madam/devcontainer/ubuntu-c).
 
 
