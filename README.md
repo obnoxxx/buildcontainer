@@ -8,7 +8,7 @@ The purpose of this project is to provide container images that can be used to b
 * Fedora Linux
 * Debian/Ubuntu Linux
 
-*Language types:**
+**Language types:**
 
 * C(gcc) and autotools/Cmake
 * golang
