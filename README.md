@@ -41,7 +41,7 @@ $ make  IMAGE_LANG=c IMAGE_OS=fedora IMAGE_REGISTRY=quay.io REGISTRY_NAMESPACE=f
 
 ```
 
-Note that `quay.io`is the default registry. The above exampl;e shows how to override it.
+Note that `quay.io`is the default registry. The above example shows how to override it.
 
 **Example for using the image:**
 
