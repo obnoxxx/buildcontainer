@@ -30,7 +30,7 @@ In order to build or use these container images,  one will need a system (typica
 
 
 
-**Example how to build and publisha fedora based image for compiling C projects:**
+**Example how to build and publish fedora based image for compiling C projects:**
 
 ```console
 
