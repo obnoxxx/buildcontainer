@@ -21,7 +21,7 @@ endif
 
 .PHONY: image-build
 image-build:
-	$(CONTAINER_CMD) build -t $(IMG) -f Containerfile.$(IMAGE_OS) --build-arg INSTALL_SCRIPT=install-packages_$(IMAGE_OS)_$(IMAGE_LANG).sh
+	$(CONTAINER_CMD) build . -t $(IMG) -f Containerfile.$(IMAGE_OS) --build-arg INSTALL_SCRIPT=install-packages_$(IMAGE_OS)_$(IMAGE_LANG).sh
 
 
 .PHONY: image-push
