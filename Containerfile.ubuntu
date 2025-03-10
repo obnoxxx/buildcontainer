@@ -1,6 +1,6 @@
 FROM docker.io/library/ubuntu
 
-MAINTAINER Michael Adam <obnox@samba.org>
+LABEL  maintainer="Michael Adam <obnox@samba.org>"
 
 LABEL org.opencontainers.image.title="ubuntu C Development Container"
 LABEL org.opencontainers.image.description="ubuntu Container for building C projects"
