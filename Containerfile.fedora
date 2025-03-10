@@ -1,6 +1,6 @@
 FROM registry.fedoraproject.org/fedora:41
 
-MAINTAINER Michael Adam <obnox@samba.org>
+LABEL maintainer="Michael Adam <obnox@samba.org>"
 
 LABEL org.opencontainers.image.title="C Development Container"
 LABEL org.opencontainers.image.description="Container for building C projects"
