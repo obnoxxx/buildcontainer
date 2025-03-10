@@ -1,6 +1,6 @@
 FROM docker.io/library/debian
 
-MAINTAINER Michael Adam <obnox@samba.org>
+LABEL maintainer="Michael Adam <obnox@samba.org>"
 
 LABEL org.opencontainers.image.title="debian C Development Container"
 LABEL org.opencontainers.image.description="debian Container for building C projects"
