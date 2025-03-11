@@ -14,9 +14,9 @@ to provide tooling for creating reproducible builds
 
 **Language types:**
 
-* C(gcc) and make/autotools/Cmake - for building C language projects
-* golang and make - for building golang projects
-* LateX/beamer/wiki2beamer and make - build LateX documents and LateX/beamer presentations
+c: * C(gcc) and make/autotools/Cmake - for building C language projects
+* go: golang and make - for building golang projects
+* latex: LaTeX/beamer/wiki2beamer and make - build LaTeX documents and LaTeX/beamer presentations
 
 **variants:**
 
