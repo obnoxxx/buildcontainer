@@ -12,8 +12,10 @@ IMG  ?= $(IMAGE_REGISTRY)/$(REGISTRY_NAMESPACE)/$(IMAGE_NAME):$(IMAGE_TAG)
 
 # detect whether to use docker or podman as container command.
 ifeq ($(origin CONTAINER_CMD),undefined)
-CONTAINER_CMD ?= $(shell podman version >/dev/null 2>&1 && echo podman)
+# try podman first
+CONTAINER_CMD=$(shell podman version >/dev/null 2>&1 && echo podman)
 ifeq ($(CONTAINER_CMD),)
+#try docker if podman is not available
 CONTAINER_CMD=$(shell docker version >/dev/null 2>&1 && echo docker)
 endif
 endif
