@@ -10,8 +10,8 @@ The purpose of this project is to provide container images that can be used to b
 
 **Language types:**
 
-* C(gcc) and autotools/Cmake
-* golang
+* C(gcc) and make/autotools/Cmake - for building C language projects
+* golang and make - for building golang projects
 
 **variants:**
 
