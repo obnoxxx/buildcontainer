@@ -1,5 +1,9 @@
 
-The purpose of this project is to provide container images that can be used to build and package software projects.
+The purpose of this project is to provide container images that can be used to compile/build and package software projects.
+
+Note that the focus is not on working interactively but on compiling/building with an intention
+to provide tooling for creating reproducible builds
+
 
 
 **planned characteristics:**
