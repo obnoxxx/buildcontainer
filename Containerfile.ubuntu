@@ -9,7 +9,7 @@ LABEL org.opencontainers.image.url="https://github.com/obnoxxx/devcontainer"
 
 ARG INSTALL_SCRIPT=""
 
-COPY  "${INSTALL_SCRIPT}" /usr/local/bin/install-packages.sh
+COPY  $INSTALL_SCRIPT /usr/local/bin/install-packages.sh
 RUN chmod +x /usr/local/bin/install-packages.sh
 RUN /usr/local/bin/install-packages.sh
 
