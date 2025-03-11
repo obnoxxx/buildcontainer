@@ -25,7 +25,7 @@ c: * C(gcc) and make/autotools/Cmake - for building C language projects
 * deb packaging
 
 
-Of these combinations, only the C language images on fedora, debian, and ubuntu are   implemented so far.
+Of these combinations, only the c and latex  images on fedora, debian, and ubuntu are   implemented so far.
 
 
 In order to build or use these container images,  one will need a system (typically Linux) with docker or podman.
@@ -61,10 +61,13 @@ $ podman  run -it --workdir /work --mount type=bind,source=$(pwd),target=/work,r
 
 It works correspondingly with docker.
 
-prepuilt fedora, debian, and ubuntu C  images are available on quay:
+prepuilt fedora, debian, and ubuntu c and latex   images are available on quay:
 
 * [fedora-c](https://quay.io/repository/madam/devcontainer/fedora-c).
 * [idebian-c](https://quay.io/repository/madam/devcontainer/debian-c).
 * [ubuntu-c](https://quay.io/repository/madam/devcontainer/ubuntu-c).
+* [fedora-latex](https://quay.io/repository/madam/devcontainer/fedora-latex).
+* [idebian-latex](https://quay.io/repository/madam/devcontainer/debian-latex).
+* [ubuntu-latex](https://quay.io/repository/madam/devcontainer/ubuntu-latex).
 
 
