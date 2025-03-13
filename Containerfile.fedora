@@ -1,15 +1,15 @@
 FROM registry.fedoraproject.org/fedora:41
 
-ARG LANG=""
-
 LABEL maintainer="Michael Adam <obnox@samba.org>"
 
-LABEL org.opencontainers.image.title="${LANG}  Build Container"
-LABEL org.opencontainers.image.description="Container for building ${LANG} projects"
+ARG BUILD_LANG=""
+ARG INSTALL_SCRIPT=""
+
+LABEL org.opencontainers.image.title="${BUILD_LANG}  Build Container"
+LABEL org.opencontainers.image.description="Container for building ${BUILD_LANG} projects"
 LABEL org.opencontainers.image.vendor="obnoxxx"
 LABEL org.opencontainers.image.url="https://github.com/obnoxxx/buildcontainer"
 
-ARG INSTALL_SCRIPT=""
 
 COPY  "${INSTALL_SCRIPT}" /usr/local/bin/install-packages.sh
 RUN chmod +x /usr/local/bin/install-packages.sh

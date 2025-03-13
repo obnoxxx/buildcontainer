@@ -28,7 +28,7 @@ vars:
 
 .PHONY: image-build
 image-build:
-	$(CONTAINER_CMD) build . -t $(IMG) -f Containerfile.$(IMAGE_OS) --build-arg LANG=$(IMAGE_LANG) --build-arg INSTALL_SCRIPT=install-packages_$(IMAGE_OS)_$(IMAGE_LANG).sh
+	$(CONTAINER_CMD) build -t $(IMG) --build-arg BUILD_LANG=$(IMAGE_LANG) --build-arg INSTALL_SCRIPT=install-packages_$(IMAGE_OS)_$(IMAGE_LANG).sh  -f Containerfile.$(IMAGE_OS) .
 
 
 .PHONY: image-push

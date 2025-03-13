@@ -1,15 +1,14 @@
 FROM docker.io/library/debian
 
-ARG LANG=""
+ARG BUILD_LANG="default-lang"
+ARG INSTALL_SCRIPT=""
 
 LABEL maintainer="Michael Adam <obnox@samba.org>"
 
-LABEL org.opencontainers.image.title="debian ${LANG} Build Container"
-LABEL org.opencontainers.image.description="debian Container for building ${LANG} projects"
+LABEL org.opencontainers.image.title="debian ${BUILD_LANG} Build Container"
+LABEL org.opencontainers.image.description="debian Container for building ${BUILD_LANG} projects"
 LABEL org.opencontainers.image.vendor="obnoxxx"
 LABEL org.opencontainers.image.url="https://github.com/obnoxxx/buildcontainer"
-
-ARG INSTALL_SCRIPT=""
 
 COPY  "${INSTALL_SCRIPT}" /usr/local/bin/install-packages.sh
 RUN chmod +x /usr/local/bin/install-packages.sh
