@@ -1,11 +1,13 @@
 FROM docker.io/library/debian
 
+ARG LANG=""
+
 LABEL maintainer="Michael Adam <obnox@samba.org>"
 
-LABEL org.opencontainers.image.title="debian C Development Container"
-LABEL org.opencontainers.image.description="debian Container for building C projects"
+LABEL org.opencontainers.image.title="debian ${LANG} Build Container"
+LABEL org.opencontainers.image.description="debian Container for building ${LANG} projects"
 LABEL org.opencontainers.image.vendor="obnoxxx"
-LABEL org.opencontainers.image.url="https://github.com/obnoxxx/devcontainer"
+LABEL org.opencontainers.image.url="https://github.com/obnoxxx/buildcontainer"
 
 ARG INSTALL_SCRIPT=""
 

@@ -1,11 +1,13 @@
 FROM docker.io/library/ubuntu
 
+ARG LANG=""
+
 LABEL  maintainer="Michael Adam <obnox@samba.org>"
 
-LABEL org.opencontainers.image.title="ubuntu C Development Container"
-LABEL org.opencontainers.image.description="ubuntu Container for building C projects"
+LABEL org.opencontainers.image.title="ubuntu ${LANG} Build Container"
+LABEL org.opencontainers.image.description="ubuntu Container for building ${LANG} projects"
 LABEL org.opencontainers.image.vendor="obnoxxx"
-LABEL org.opencontainers.image.url="https://github.com/obnoxxx/devcontainer"
+LABEL org.opencontainers.image.url="https://github.com/obnoxxx/buildcontainer"
 
 ARG INSTALL_SCRIPT=""
 
