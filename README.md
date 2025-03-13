@@ -2,7 +2,7 @@
 The purpose of this project is to provide container images that can be used to compile/build and package software projects.
 
 Note that the focus is not on working interactively but on compiling/building with an intention
-to provide tooling for creating reproducible builds
+to provide tooling for creatingdeterministic and reproducible builds
 
 
 
@@ -63,11 +63,11 @@ It works correspondingly with docker.
 
 prepuilt fedora, debian, and ubuntu c and latex   images are available on quay:
 
-* [fedora-c](https://quay.io/repository/madam/devcontainer/fedora-c).
-* [idebian-c](https://quay.io/repository/madam/devcontainer/debian-c).
-* [ubuntu-c](https://quay.io/repository/madam/devcontainer/ubuntu-c).
-* [fedora-latex](https://quay.io/repository/madam/devcontainer/fedora-latex).
-* [idebian-latex](https://quay.io/repository/madam/devcontainer/debian-latex).
-* [ubuntu-latex](https://quay.io/repository/madam/devcontainer/ubuntu-latex).
+* [fedora-c](https://quay.io/repository/madam/buildcontainer/fedora-c).
+* [idebian-c](https://quay.io/repository/madam/buildcontainer/debian-c).
+* [ubuntu-c](https://quay.io/repository/madam/buildcontainer/ubuntu-c).
+* [fedora-latex](https://quay.io/repository/madam/buildcontainer/fedora-latex).
+* [idebian-latex](https://quay.io/repository/madam/buildcontainer/debian-latex).
+* [ubuntu-latex](https://quay.io/repository/madam/buildcontainer/ubuntu-latex).
 
 
