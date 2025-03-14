@@ -63,11 +63,11 @@ It works correspondingly with docker.
 
 prepuilt fedora, debian, and ubuntu c and latex   images are available on quay:
 
-* [fedora-c](https://quay.io/repository/madam/buildbox/fedora-c).
-* [idebian-c](https://quay.io/repository/madam/buildbox/debian-c).
+* [fedora-c](https://quay.io/repository/buildbox/buildbox/fedora-c).
+* [idebian-c](https://quay.io/repository/buildbox/buildbox/debian-c).
 * [ubuntu-c](https://quay.io/repository/madam/buildbox/ubuntu-c).
-* [fedora-latex](https://quay.io/repository/madam/buildbox/fedora-latex).
-* [idebian-latex](https://quay.io/repository/madam/buildbox/debian-latex).
-* [ubuntu-latex](https://quay.io/repository/madam/buildbox/ubuntu-latex).
+* [fedora-latex](https://quay.io/repository/buildbox/buildbox/fedora-latex).
+* [idebian-latex](https://quay.io/repository/buildbox/buildbox/debian-latex).
+* [ubuntu-latex](https://quay.io/repository/buildbox/buildbox/ubuntu-latex).
 
 
