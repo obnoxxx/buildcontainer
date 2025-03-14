@@ -1,7 +1,7 @@
 SHELL := /usr/bin/env bash
 
 IMAGE_REGISTRY ?= quay.io
-REGISTRY_NAMESPACE ?= fillme
+REGISTRY_NAMESPACE ?= buildbox
 
 IMAGE_TAG ?= latest
 IMAGE_OS ?= fedora
