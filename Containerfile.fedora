@@ -8,7 +8,7 @@ ARG INSTALL_SCRIPT=""
 LABEL org.opencontainers.image.title="${BUILD_LANG}  Build Container"
 LABEL org.opencontainers.image.description="Container for building ${BUILD_LANG} projects"
 LABEL org.opencontainers.image.vendor="obnoxxx"
-LABEL org.opencontainers.image.url="https://github.com/obnoxxx/buildcontainer"
+LABEL org.opencontainers.image.url="https://github.com/obnoxxx/buildbox"
 
 
 COPY  "${INSTALL_SCRIPT}" /usr/local/bin/install-packages.sh
