@@ -1,0 +1,203 @@
+#!/usr/bin/env bash
+
+function detect_container_command() {
+
+
+if [ -z "${CONTAINER_CMD}" ]; then
+    CONTAINER_CMD="$(podman version > /dev/null 2>&1 && echo podman)"
+fi
+
+if [ -z "${CONTAINER_CMD}" ]; then
+   CONTAINER_CMD="$(docker version > /dev/null 2>&1 && echo docker)"
+
+fi
+}
+
+
+
+# default values for ccommand line options:
+ LANG=c
+ REGISTRY=quay.io
+ CONTAINER_CMD=""
+ OS=fedora
+ NAMESPACE=buildbox
+ BUILD_CMD=""
+ DEPS=""
+ ACTION=""
+
+
+detect_container_command
+
+usage() {
+>&2 cat <<EOF
+Usage: $0 options
+
+These are the supported options:
+[ -l | --lang (latex|c) ]                    - compilation language (default: $LANG)
+[ -r | --registry (quay.io|... ]             - container registry (default: $REGISTRY)
+[ -c | --container-cmd (podman|docker) ]     - default: auto-detected
+[ -o | --os (fedora|debian|ubuntu|suse) ]         - linux distro (default: $OS)
+[ -n | --registry-namespace (...) ]          - default: $NAMESPACE 
+[ -s  | --build-script (path) ]              - command or local script (in CWD)  for building the project.
+[ -d | --deps (pkg,pkg,pkg,...) ]            - packages to install
+[ -h | --help ]                              - print usage information
+[-t | --test ]                               - do not build, print some info for  test this program
+[ -b | --build ]                             - perform build in CWD
+
+One of the actions (help, test, and build) must be selected.
+
+
+
+EOF
+
+}
+
+# parsing command line arguments:
+optstring="l:r:c:o:n:hbts:d:"
+optstring_long="lang:,registry:,container-cmd:,help,itesy,build,build-script:,deps:"
+
+
+parsed_args=$(getopt  -n "builbo" -o "$optstring" -l "$optstring_long" -- "$@")
+args_valid=$?
+
+if [ "$args_valid" != "0" ]; then
+  echo "error:invalid args."
+  usage
+  exit 1
+fi
+
+# processing parsed args
+
+eval set -- "$parsed_args"
+while :
+do
+  case "$1" in
+ -l | --lang) LANG="$2" ; shift 2 ;;
+ -r  | --registry) REGISTRY="$2" ; shift 2 ;;
+ -c | --container-cmd) CONTAINER_CMD="$2"; shift 2 ;;
+ -o | --os) OS="$2"; shift 2 ;;
+ -n | --registry-namespace) NAMESPACE="$2" ; shift 2 ;;
+ -s | --build-script) BUILD_CMD="$2" ; shift 2 ;;
+ -d | --deps) DEPS="$2"; shift 2 ;;
+ -h | --help) ACTION="help"; shift ;;
+ -b| --build) ACTION="build"; shift ;;
+ -t| --test) ACTION="test" ; shift ;;
+
+
+ # -- means end of args. ignore and stop processing.
+ --) shift ; break ;;
+ *) echo "Unexpected option $1. - this should not happen."
+ # this should have been caught above with args_valid
+ usage
+ exit 1 
+ ;;
+  esac
+done
+
+# done processing args
+
+
+
+#post-processing args
+
+DEPS_PKGS="${DEPS//,/ }"
+IMAGE="$REGISTRY/$NAMESPACE/buildbox/$OS-$LANG:latest"
+
+
+case "$OS" in
+
+fedora)
+    PKG_CMD="dnf install -y"
+    ;;
+debian|ubuntu)
+    PKG_CMD="apt-get install --yes"
+    ;;
+suse)
+    PKG_CMD="zypper install -y"
+    ;;
+esac
+
+
+
+
+
+detect_container_command
+
+if [ "$CONTAINER_CMD" = "podman" ]; then
+
+    CONTAINER_RUN_CMD="$CONTAINER_CMD run -it --workdir /work --mount type=bind,source=$(pwd),target=/work,relabel=private --platform linux/amd64 $IMAGE"
+ elif [ "$CONTAINER_CMD" = "docker" ]; then
+     CONTAINER_RUN_CMD="$CONTAINER_CMD run -it --workdir /work-v $(pwd):/work --platformlinux/amd64 $IMAGE" 
+ else
+     echo "error: CONTAINER_CMD not set" 
+fi
+
+if [ -z "$ACTION" ]; then
+echo "no action selected. Please use -t, -h, or -b."
+usage
+exit 1
+fi
+
+
+function print_settings() {
+  echo "settings:"
+  echo
+  echo "LANG: $LANG"
+  echo "OS: $OS"
+  echo "REGISTRY: $REGISTRY"
+  echo "NAMESPACE: $NAMESPACE"
+  echo "BUILD_CMD: $BUILD_CMD"
+  echo "DEPS: $DEPS"
+  echo "DEPS_PKGS: $DEPS_PKGS"
+  echo "PKG_CMD: $PKG_CMD"
+  echo "CONTAINER_CMD: $CONTAINER_CMD"
+  echo "CONTAINER_RUN_CMD: '$CONTAINER_RUN_CMD'"
+  
+  echo "IMAGE: $IMAGE"
+    
+}
+
+if [ "$ACTION" = "test" ]; then
+    print_settings
+    exit 0
+fi
+
+if [ "$ACTION" = "help" ]; then
+    usage
+    exit 0
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function install_deps() {
+    if [ -n "$DEPS" ]; then
+"$CONTAINER_RUN_CMD $PKG_CMD $DEPS_PKGS" 
+    fi
+
+}
+
+function run_build() {
+$CONTAINER_RUN_CMD "$BUILD_CMD"
+}
+
+
+if [ "$ACTION" = "build" ]; then
+install_deps
+run_build
+
+
+
+
