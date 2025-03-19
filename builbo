@@ -28,7 +28,7 @@ fi
 
 detect_container_command
 
-usage() {
+function usage() {
 >&2 cat <<EOF
 Usage: $0 options
 
@@ -40,8 +40,8 @@ These are the supported options:
 [ -n | --registry-namespace (...) ]          - default: $NAMESPACE 
 [ -s  | --build-script (path) ]              - command or local script (in CWD)  for building the project.
 [ -d | --deps (pkg,pkg,pkg,...) ]            - packages to install
-[ -h | --help ]                              - print usage information
-[-t | --test ]                               - do not build, print some info for  test this program
+[ -h | --help ]                              - print this usage information
+[-t | --test ]                               - do not build, print some info for  testing this program
 [ -b | --build ]                             - perform build in CWD
 
 One of the actions (help, test, and build) must be selected.
@@ -79,8 +79,8 @@ do
  -n | --registry-namespace) NAMESPACE="$2" ; shift 2 ;;
  -s | --build-script) BUILD_CMD="$2" ; shift 2 ;;
  -d | --deps) DEPS="$2"; shift 2 ;;
- -h | --help) ACTION="help"; shift ;;
- -b| --build) ACTION="build"; shift ;;
+ -h | --help) ACTION="help" ; shift ;;
+ -b| --build) ACTION="build" ; shift ;;
  -t| --test) ACTION="test" ; shift ;;
 
 
