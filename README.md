@@ -76,7 +76,7 @@ prepuilt fedora, debian, and ubuntu images for c and latex   images are availabl
 
 **builbo cli:**
 
-Apart from tooling to create container images, the project provides a cli tool `builbo`to facilitate building software projects in the buildbox containers.
+Apart from tooling to create container images, the project provides a cli tool `builbo` to facilitate building software projects in the buildbox containers.
 
 example workflow:
 
@@ -84,10 +84,11 @@ example workflow:
 $ git clone project
 $ cd project_dir
 $ edit build.sh
-$ builbo -c c -o debian -s ./build.sh --build
+$ builbo -c -l c -o debian -s ./build.sh --build
 ...
 $
-``
+```
+
 As a result of this process, build artifacts will be placed under  the CWD (project checkout dir).
 
 
