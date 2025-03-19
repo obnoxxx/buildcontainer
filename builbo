@@ -133,10 +133,12 @@ if [ "$CONTAINER_CMD" = "podman" ]; then
 fi
 
 if [ -z "$ACTION" ]; then
-echo "no action selected. Please use one of -t, -h, and -b."
+echo "ierror: no action selected. Please use one of -t, -h, and -b."
 usage
 exit 1
 fi
+
+
 
 
 function print_settings() {
