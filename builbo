@@ -197,6 +197,7 @@ $CONTAINER_RUN_CMD "$BUILD_CMD"
 if [ "$ACTION" = "build" ]; then
 install_deps
 run_build
+fi
 
 
 
