@@ -28,7 +28,7 @@ to provide tooling for creating deterministic and reproducible builds
 * deb packaging
 
 
-Of these combinations, only the c and latex  images on fedora, debian, and ubuntu are   implemented so far.
+Of these combinations, only the c and latex  images on fedora, debian, ubuntu, and openSUSE  are   implemented so far.
 
 
 In order to build or use these container images,  one will need a system (typically Linux) with docker or podman.
@@ -64,14 +64,16 @@ $ podman  run -it --workdir /work --mount type=bind,source=$(pwd),target=/work,r
 
 It works correspondingly with docker.
 
-prepuilt fedora, debian, and ubuntu images for c and latex   images are available on quay:
+prepuilt fedora, debian,  ubuntu, and openSUSE  images for c and latex   images are available on quay:
 
 * [fedora-c](https://quay.io/repository/buildbox/buildbox/fedora-c).
 * [idebian-c](https://quay.io/repository/buildbox/buildbox/debian-c).
 * [ubuntu-c](https://quay.io/repository/madam/buildbox/ubuntu-c).
+* [suse-c](https://quay.io/repository/madam/buildbox/suse-c).
 * [fedora-latex](https://quay.io/repository/buildbox/buildbox/fedora-latex).
 * [idebian-latex](https://quay.io/repository/buildbox/buildbox/debian-latex).
 * [ubuntu-latex](https://quay.io/repository/buildbox/buildbox/ubuntu-latex).
+* [suse-latex](https://quay.io/repository/buildbox/buildbox/suse-latex).
 
 
 **builbo cli:**

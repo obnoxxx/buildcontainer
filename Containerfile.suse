@@ -1,0 +1,17 @@
+FROM opensuse/tumbleweed
+
+LABEL maintainer="Michael Adam <obnox@samba.org>"
+
+ARG BUILD_LANG=""
+ARG INSTALL_SCRIPT=""
+
+LABEL org.opencontainers.image.title="${BUILD_LANG}  Build Container"
+LABEL org.opencontainers.image.description="OpenSUSE Container for building ${BUILD_LANG} projects"
+LABEL org.opencontainers.image.vendor="obnoxxx"
+LABEL org.opencontainers.image.url="https://github.com/obnoxxx/buildbox"
+
+
+COPY  "${INSTALL_SCRIPT}" /usr/local/bin/install-packages.sh
+RUN chmod +x /usr/local/bin/install-packages.sh
+RUN /usr/local/bin/install-packages.sh
+
