@@ -1,8 +1,9 @@
 
-The purpose of this project is to provide container images that can be used to compile/build and package software projects.
+The purpose of this project is to provide container images that can be used to compile/build and package software projects
+along with accompanying cli tooling to facilitate convenient execution of builds in those containers.
 
-Note that the focus is not on working interactively but on compiling/building with an intention
-to provide tooling for creatingdeterministic and reproducible builds
+Note that the focus is not on working interactively but  instead on compiling/building with an intention
+to provide tooling for creating deterministic and reproducible builds
 
 
 
@@ -11,10 +12,12 @@ to provide tooling for creatingdeterministic and reproducible builds
 **OS flavors:**
 * Fedora Linux
 * Debian/Ubuntu Linux
+* maybe opensuse Linux
 
-**Language types:**
+**Language types:/installed tools**
 
-c: * C(gcc) and make/autotools/Cmake - for building C language projects
+* c: C(gcc) and make/autotools/Cmake - for building C language projects
+* maybe: cpp: make tools an compiler for C++ projects
 * go: golang and make - for building golang projects
 * latex: LaTeX/beamer/wiki2beamer and make - build LaTeX documents and LaTeX/beamer presentations
 
@@ -61,7 +64,7 @@ $ podman  run -it --workdir /work --mount type=bind,source=$(pwd),target=/work,r
 
 It works correspondingly with docker.
 
-prepuilt fedora, debian, and ubuntu c and latex   images are available on quay:
+prepuilt fedora, debian, and ubuntu images for c and latex   images are available on quay:
 
 * [fedora-c](https://quay.io/repository/buildbox/buildbox/fedora-c).
 * [idebian-c](https://quay.io/repository/buildbox/buildbox/debian-c).
