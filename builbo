@@ -38,11 +38,11 @@ These are the supported options:
 [ -c | --container-cmd (podman|docker) ]     - default: $CONTAINER_CMD (auto-detected)
 [ -o | --os (fedora|debian|ubuntu|suse) ]         - linux distro (default: $OS)
 [ -n | --registry-namespace (...) ]          - default: $NAMESPACE 
-[ -s  | --build-script (path) ]              - command or local script (in CWD)  for building the project.
+[ -s  | --build-script (path) ]              - command or local script (in the CWD)  for building the project.
 [ -d | --deps (pkg,pkg,pkg,...) ]            - packages to install
 [ -h | --help ]                              - print this usage information
-[-t | --test ]                               - do not build, print some info for  testing this program
-[ -b | --build ]                             - perform build in CWD
+[-t | --test ]                               - print some info for  testing this program
+[ -b | --build ]                             - perform a build in the CWD
 
 One of the actions (help, test, and build) must be selected.
 
@@ -133,7 +133,7 @@ if [ "$CONTAINER_CMD" = "podman" ]; then
 fi
 
 if [ -z "$ACTION" ]; then
-echo "no action selected. Please use -t, -h, or -b."
+echo "no action selected. Please use one of -t, -h, and -b."
 usage
 exit 1
 fi
