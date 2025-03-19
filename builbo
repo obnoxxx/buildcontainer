@@ -139,6 +139,18 @@ usage
 exit 1
 fi
 
+if [ "$ACTION" = "build" ]; then
+
+    if [ -z "$BUILD_CMD" ]; then
+
+        echo "error: action 'build' requires --build-script (-s)"
+        usage
+        exit 1
+    fi
+
+
+fi
+
 
 
 
