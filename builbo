@@ -143,7 +143,8 @@ if [ "$CONTAINER_CMD" = "podman" ]; then
 
     CONTAINER_RUN_CMD="$CONTAINER_CMD run -it --workdir /work --mount type=bind,source=$(pwd),target=/work,relabel=private --platform linux/amd64 $IMAGE"
  elif [ "$CONTAINER_CMD" = "docker" ]; then
-     CONTAINER_RUN_CMD="$CONTAINER_CMD run -it --workdir /work-v $(pwd):/work --platformlinux/amd64 $IMAGE" 
+     CONTAINER_RUN_CMD="$CONTAINER_CMD run -it --workdir /work -v $(pwd):/work --platform linux/amd64 $IMAGE"
+      
 fi
 
 if [ -z "$ACTION" ]; then
