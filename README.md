@@ -67,11 +67,11 @@ It works correspondingly with docker.
 prepuilt fedora, debian,  ubuntu, and openSUSE  images for c and latex   images are available on quay:
 
 * [fedora-c](https://quay.io/repository/buildbox/buildbox/fedora-c).
-* [idebian-c](https://quay.io/repository/buildbox/buildbox/debian-c).
+* [debian-c](https://quay.io/repository/buildbox/buildbox/debian-c).
 * [ubuntu-c](https://quay.io/repository/madam/buildbox/ubuntu-c).
 * [suse-c](https://quay.io/repository/madam/buildbox/suse-c).
 * [fedora-latex](https://quay.io/repository/buildbox/buildbox/fedora-latex).
-* [idebian-latex](https://quay.io/repository/buildbox/buildbox/debian-latex).
+* [debian-latex](https://quay.io/repository/buildbox/buildbox/debian-latex).
 * [ubuntu-latex](https://quay.io/repository/buildbox/buildbox/ubuntu-latex).
 * [suse-latex](https://quay.io/repository/buildbox/buildbox/suse-latex).
 
