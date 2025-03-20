@@ -134,7 +134,6 @@ fi
 
 if [ -z "$ACTION" ]; then
 echo "error: no action selected. Please use one of -t, -h, and -b."
-echo "error: no action selected. Please use one of -t, -h, and -b."
 usage
 exit 1
 fi
