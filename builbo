@@ -28,6 +28,11 @@ fi
 
 detect_container_command
 
+if [ -z "$CONTAINER_CMD" ]; then
+    echo "error: failed to detect container command (podman or docker)."
+    exit 1
+fi
+
 function usage() {
 >&2 cat <<EOF
 Usage: $0 options
@@ -100,6 +105,13 @@ done
 
 #post-processing args
 
+
+if [ -z "$CONTAINER_CMD" ]; then
+    echo "error: container command not set. Please use '-c command'."
+    usage
+    exit 1
+fi
+
 DEPS_PKGS="${DEPS//,/ }"
 IMAGE="$REGISTRY/$NAMESPACE/buildbox/$OS-$LANG:latest"
 
@@ -121,15 +133,17 @@ esac
 
 
 
-detect_container_command
 
+# setting CONTAINER_RUN_CMD assumes CONTAINER_RUN_CMD is set.
+if [ -z "$CONTAINER_CMD" ]; then
+    echo "error: container command not set. zthis should noy happen."
+    exit 1
+fi
 if [ "$CONTAINER_CMD" = "podman" ]; then
 
     CONTAINER_RUN_CMD="$CONTAINER_CMD run -it --workdir /work --mount type=bind,source=$(pwd),target=/work,relabel=private --platform linux/amd64 $IMAGE"
  elif [ "$CONTAINER_CMD" = "docker" ]; then
      CONTAINER_RUN_CMD="$CONTAINER_CMD run -it --workdir /work-v $(pwd):/work --platformlinux/amd64 $IMAGE" 
- else
-     echo "error: CONTAINER_CMD not set" 
 fi
 
 if [ -z "$ACTION" ]; then
